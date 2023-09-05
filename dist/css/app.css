@@ -2,4 +2,9 @@
 body {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
+}
+
+.container {
+  background-color: hsl(10, 79%, 65%);
+  color: white;
 }/*# sourceMappingURL=app.css.map */
