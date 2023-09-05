@@ -1,8 +1,8 @@
 import '../app.css'
 
-function Layout({ children }) {
+function Layout({ children, style }) {
   return (
-    <div className="container">
+    <div className="container" style={style}>
       {children}
     </div>
   );
