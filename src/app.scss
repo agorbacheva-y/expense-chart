@@ -35,7 +35,14 @@ body {
 
 .balance {
   display: flex;
-  width: 100%;
+
+  .balance__nr {
+    float: left;
+  }
+
+  .balance__logo {
+    float: right;
+  }
 }
 
 .spending {

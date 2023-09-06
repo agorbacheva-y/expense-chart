@@ -32,7 +32,12 @@ body {
 
 .balance {
   display: flex;
-  width: 100%;
+}
+.balance .balance__nr {
+  float: left;
+}
+.balance .balance__logo {
+  float: right;
 }
 
 .spending {
