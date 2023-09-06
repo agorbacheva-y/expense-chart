@@ -10,8 +10,8 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   background-color: hsl(27, 66%, 92%);
-  width: 375px;
-  height: 100vh;
+  max-width: 375px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +20,8 @@ body {
 .body-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.container {
   width: 100%;
-  margin: 0 20px;
-  padding: 20px;
-  border-radius: 10px;
+  gap: 15px;
 }
 
 .balance {
@@ -42,5 +36,10 @@ body {
 
 .spending {
   display: flex;
+}
+
+.container {
   width: 100%;
+  padding: 20px;
+  border-radius: 10px;
 }/*# sourceMappingURL=app.css.map */

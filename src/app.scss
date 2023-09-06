@@ -12,26 +12,19 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   background-color: hsl(27, 66%, 92%);
-  width: 375px; // mobile first
-  height: 100vh;
+  max-width: 375px; // mobile first
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
-
 .body-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.container {
   width: 100%;
-  margin: 0 20px;
-  padding: 20px;
-  border-radius: 10px;
+  gap: 15px;
 }
-
 
 .balance {
   display: flex;
@@ -47,5 +40,10 @@ body {
 
 .spending {
   display: flex;
+}
+
+.container {
   width: 100%;
+  padding: 20px;
+  border-radius: 10px;
 }
