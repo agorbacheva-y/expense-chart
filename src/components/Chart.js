@@ -28,3 +28,5 @@ function Chart({ style }) {
 };
 
 export default Chart;
+
+// how to map chart__fill with heights from data in chartData
