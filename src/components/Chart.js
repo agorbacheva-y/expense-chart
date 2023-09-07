@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
+import Amount from "./Amount";
 
-function Chart() {
+function Chart({ style }) {
   const [ chartData, setChartData ] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("data.json")
-  //   .then(res => res.json())
-  //   .then(data => setChartData(data))
-
-  //   console.log(chartData);
-  // },[]);
 
   useEffect(() => {
     fetchChartData();
@@ -22,12 +15,13 @@ function Chart() {
     setChartData(data.map(({ amount }) => amount));
   };
 
-  console.log(chartData);
-
   return (
     <div className='chart'>
       <div className='chart__bar'>
-          <div className='chart__fill' style={{ height: `${chartData}%` }}></div>
+        {chartData.map((id, item) => (
+          <Amount key={id} className='chart__fill' style={{ height: `${item}%` }}/>
+        ))}
+          
       </div>
     </div>
   );
