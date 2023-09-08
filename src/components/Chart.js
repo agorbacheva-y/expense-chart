@@ -1,29 +1,14 @@
 import { useState, useEffect } from "react";
 
-function Chart() {
-  const [ spendingAmount, setSpendingAmout ] = useState([]);
+function Chart({ spendingAmount, chartDate }) {
   const [ chartAmount, setChartAmount ] = useState([]);
-  const [ chartDate, setChartDate ] = useState([]);
   const [ dayIndex, setDayIndex ] = useState(0);
   let day = 'wed';
 
   useEffect(() => {
-    fetchSpendingData();
-    currentDay();
-  },[]);
-
-  useEffect(() => {
     fetchChartData();
+    currentDay();
   },[spendingAmount]);
-
-  // get amount and date from data.json
-  const fetchSpendingData = async () => {
-    const response = await fetch("/data.json");
-    const data = await response.json();
-
-    setSpendingAmout(data.map(({ amount }) => amount));
-    setChartDate(data.map(({ day }) => day));
-  };
 
   // adjust heights so max y value is 70%
   const fetchChartData = () => {
