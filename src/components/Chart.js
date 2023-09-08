@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Amount from "./Amount";
 
-function Chart({ style }) {
+function Chart() {
   const [ chartData, setChartData ] = useState([]);
 
   useEffect(() => {
@@ -13,15 +13,16 @@ function Chart({ style }) {
     const data = await response.json();
 
     setChartData(data.map(({ amount }) => amount));
+
+    console.log(chartData);
   };
 
   return (
     <div className='chart'>
       <div className='chart__bar'>
-        {chartData.map((id, item) => (
-          <Amount key={id} className='chart__fill' style={{ height: `${item}%` }}/>
+        {chartData.map((item, id) => (
+          <div key={id} className='chart__fill' style={{ height:`${item}%` }}></div>
         ))}
-          
       </div>
     </div>
   );
