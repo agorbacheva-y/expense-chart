@@ -15,7 +15,10 @@ function Chart() {
     const response = await fetch("/data.json");
     const data = await response.json();
 
-    setChartAmount(data.map(({ amount }) => amount));
+    const amount = data.map(({ amount }) => amount);
+    const newAmount = amount.map(currentValue => currentValue/0.7);
+
+    setChartAmount(newAmount);
     setChartDate(data.map(({ day }) => day));
 
     //console.log(chartAmount);
@@ -51,10 +54,7 @@ function Chart() {
         return;
     };
   };
-
-
- 
-  console.log(dayIndex);
+  //console.log(dayIndex);
 
   return (
     <div className='chart'>

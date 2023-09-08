@@ -53,13 +53,15 @@ body {
 .chart {
   max-width: 300px;
   width: 100%;
+  height: 150px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .chart__bar {
   width: 100%;
-  height: 150px;
+  height: 100%;
   display: flex;
   align-items: flex-end;
   gap: 10px;
