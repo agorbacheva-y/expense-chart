@@ -54,6 +54,7 @@ body {
   max-width: 300px;
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 .chart__bar {
@@ -62,10 +63,25 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 10px;
-  border: 1px solid blue;
 }
 
 .chart__fill {
   width: 100%;
   background-color: base.$primary-color;
+  border-radius: 2px;
+}
+
+.chart__week {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.chart__day {
+  width: 100%;
+  color: hsl(28, 10%, 53%);
+  font-size: 8px;
+  text-align: center;
 }

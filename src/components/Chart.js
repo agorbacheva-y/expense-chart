@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Amount from "./Amount";
 
 function Chart() {
-  const [ chartData, setChartData ] = useState([]);
+  const [ chartAmount, setChartAmount ] = useState([]);
+  const [ chartDate, setChartDate ] = useState([]);
 
   useEffect(() => {
     fetchChartData();
@@ -12,16 +13,24 @@ function Chart() {
     const response = await fetch("/data.json");
     const data = await response.json();
 
-    setChartData(data.map(({ amount }) => amount));
+    setChartAmount(data.map(({ amount }) => amount));
+    setChartDate(data.map(({ day }) => day));
 
-    console.log(chartData);
+    //console.log(chartAmount);
+    console.log(chartDate);
   };
 
   return (
     <div className='chart'>
       <div className='chart__bar'>
-        {chartData.map((item, id) => (
+        {chartAmount.map((item, id) => (
           <div key={id} className='chart__fill' style={{ height:`${item}%` }}></div>
+        ))}
+      </div>
+
+      <div className="chart__week">
+        {chartDate.map((item, id) => (
+          <div key={id} className="chart__day">{item}</div>
         ))}
       </div>
     </div>
