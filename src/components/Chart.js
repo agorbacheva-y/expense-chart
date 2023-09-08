@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import Amount from "./Amount";
 
 function Chart() {
   const [ chartAmount, setChartAmount ] = useState([]);
   const [ chartDate, setChartDate ] = useState([]);
+  const [ dayIndex, setDayIndex ] = useState(0);
+  let day = 'wed';
 
   useEffect(() => {
     fetchChartData();
+    currentDay();
   },[]);
 
   const fetchChartData = async () => {
@@ -17,14 +19,53 @@ function Chart() {
     setChartDate(data.map(({ day }) => day));
 
     //console.log(chartAmount);
-    console.log(chartDate);
+    //console.log(chartDate);
   };
+
+  // set index of current day
+  const currentDay = () => { 
+    switch(day) {
+      case 'mon' :
+        setDayIndex(0);
+        break;
+      case 'tue' :
+        setDayIndex(1);
+        break;
+      case 'wed' :
+        setDayIndex(2);
+        break;
+      case 'thu' :
+        setDayIndex(3);
+        break;
+      case 'fri' :
+        setDayIndex(4);
+        break;
+      case 'sat' :
+        setDayIndex(5);
+        break;
+      case 'sun' :
+        setDayIndex(6);
+        break;
+      default :
+      setDayIndex(7);
+        return;
+    };
+  };
+
+
+ 
+  console.log(dayIndex);
 
   return (
     <div className='chart'>
       <div className='chart__bar'>
         {chartAmount.map((item, id) => (
-          <div key={id} className='chart__fill' style={{ height:`${item}%` }}></div>
+          <div 
+            key={id} 
+            className={ dayIndex === id ? 'chart__fill--today' : 'chart__fill'}
+            style={{ height:`${item}%` }}
+          >
+          </div>
         ))}
       </div>
 

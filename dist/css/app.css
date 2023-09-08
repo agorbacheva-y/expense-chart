@@ -66,6 +66,12 @@ body {
   border-radius: 2px;
 }
 
+.chart__fill--today {
+  width: 100%;
+  background-color: hsl(186, 34%, 60%);
+  border-radius: 2px;
+}
+
 .chart__week {
   display: flex;
   justify-content: space-between;
