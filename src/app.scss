@@ -99,3 +99,31 @@ body {
 hr {
   border: 0.7px solid hsl(27, 66%, 92%);
 }
+
+.spending--month {
+  display: flex;
+  height: 95px;
+}
+
+.this-month {
+  margin: 20px 0;
+  width: 50%;
+  
+  p {
+    color: hsl(28, 10%, 53%);
+    font-size: 14px;
+  }
+}
+
+.last-month {
+  margin: 20px 0;
+  float: right;
+  text-align: end;
+  width: 50%;
+  align-self: flex-end;
+
+  p {
+    color: hsl(28, 10%, 53%);
+    font-size: 14px;
+  }
+}

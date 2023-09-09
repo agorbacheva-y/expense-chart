@@ -30,8 +30,10 @@ function Spending() {
         <h3>Spending - Last 7 days</h3>
         <Chart spendingAmount={spendingAmount} chartDate={chartDate} />
         <hr />
-        <ThisMonth thisMonth={thisMonth} />
-        <LastMonth thisMonth={thisMonth} lastMonth={lastMonth} />
+        <div className="spending--month">
+          <ThisMonth thisMonth={thisMonth} />
+          <LastMonth thisMonth={thisMonth} lastMonth={lastMonth} />
+        </div>
       </Layout>
     </div>
   );

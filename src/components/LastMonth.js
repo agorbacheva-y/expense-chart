@@ -19,10 +19,10 @@ function LastMonth({ thisMonth, lastMonth }) {
 
     setPercentChange(roundedDiff);
   };
-  
+
   return (
-    <div>
-      <p>{percentChange}%</p>
+    <div className="last-month">
+      <h5>{percentChange}%</h5>
       <p>from last month</p>
     </div>
   );
