@@ -8,6 +8,8 @@ function Spending() {
   const [ spendingAmount, setSpendingAmout ] = useState([]);
   const [ chartDate, setChartDate ] = useState([]);
 
+  let thisMonth = 478.33;
+  let lastMonth = 467.12;
   
   useEffect(() => {
     fetchSpendingData();
@@ -28,8 +30,8 @@ function Spending() {
         <h3>Spending - Last 7 days</h3>
         <Chart spendingAmount={spendingAmount} chartDate={chartDate} />
         <hr />
-        <ThisMonth />
-        <LastMonth />
+        <ThisMonth thisMonth={thisMonth} />
+        <LastMonth thisMonth={thisMonth} lastMonth={lastMonth} />
       </Layout>
     </div>
   );
