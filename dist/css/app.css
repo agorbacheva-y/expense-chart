@@ -9,7 +9,7 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   background-color: hsl(27, 66%, 92%);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -68,13 +68,13 @@ body {
 .chart__fill {
   width: 100%;
   background-color: hsl(10, 79%, 65%);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .chart__fill--today {
   width: 100%;
   background-color: hsl(186, 34%, 60%);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .chart__week {
@@ -127,4 +127,16 @@ hr {
 .last-month p {
   color: hsl(28, 10%, 53%);
   font-size: 16px;
+}
+
+@media screen and (min-width: 375px) {
+  .body-container {
+    width: 450px;
+  }
+  .container {
+    padding: 20px 30px;
+  }
+  .chart {
+    min-width: 100%;
+  }
 }/*# sourceMappingURL=app.css.map */

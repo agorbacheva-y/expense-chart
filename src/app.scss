@@ -11,12 +11,13 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   background-color: base.$background-color;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .body-container {
   display: flex;
   flex-direction: column;
@@ -72,13 +73,13 @@ body {
 .chart__fill {
   width: 100%;
   background-color: base.$primary-color;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .chart__fill--today {
   width: 100%;
   background-color: base.$secondary-color;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .chart__week {
@@ -133,5 +134,19 @@ hr {
   p {
     color: base.$main-font-color;
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .body-container {
+    width: 450px;
+  }
+
+  .container {
+    padding: 20px 30px;
+  }
+
+  .chart {
+    min-width: 100%;
   }
 }
