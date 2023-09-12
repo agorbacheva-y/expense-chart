@@ -57,10 +57,15 @@ body {
   display: flex;
 }
 
-.chart__bar {
+.chart__cntr {
+  display: flex;
   width: 100%;
-  height: 100%;
+  gap: 10px;
   border: 1px solid green;
+}
+
+.chart__bar {
+  overflow: hidden;
 }
 
 .chart__overlay {
@@ -68,7 +73,9 @@ body {
   background-color: black;
   color: white;
   font-size: 12px;
+  font-weight: 700;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .chart__fill--other {

@@ -63,7 +63,7 @@ function Chart({ chartDate }) {
 
   return (
     <div className="chart">
-      {/* <div className="chart__bar"> */}
+      <div className="chart__cntr">
         {spendingAmount.map((item, id) => (
           <div className="chart__bar">
             <div key={id} className="chart__overlay">${item}</div>
@@ -75,7 +75,7 @@ function Chart({ chartDate }) {
             </div>
           </div>
         ))}
-      {/* </div> */}
+      </div>
       {/* <div className="chart__overlay">
         {spendingAmount.map((item, id) => (
           <div key={id} className="chart__overlay--box">${item}</div>
