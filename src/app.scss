@@ -59,21 +59,19 @@ body {
   width: 100%;
   height: 250px;
   border: 1px solid red;
-  display: flex;
-}
-
-.chart__cntr {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  border: 1px solid green;
+  display: block;
 }
 
 .chart__bar {
-  overflow: hidden;
+  display: inline-flex;
+  height: fit-content;
+  width: 100%;
+  border: 1px solid blue;
 }
 
 .chart__overlay {
+  height: 27px;
+  width: 15%;
   border-radius: 3px;
   background-color: black;
   color: white;
@@ -83,12 +81,21 @@ body {
   margin-bottom: 5px;
 }
 
+.chart__fill {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  gap: 15px;
+}
+
 .chart__fill--other {
+  width: 12%;
   background-color: base.$primary-color;
   border-radius: 3px;
 }
 
 .chart__fill--today {
+  width: 12%;
   background-color: base.$secondary-color;
   border-radius: 3px;
 }
