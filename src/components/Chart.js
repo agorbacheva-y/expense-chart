@@ -63,36 +63,23 @@ function Chart({ chartDate }) {
 
   return (
     <div className="chart">
-      {/* <div className="chart__cntr">
+    
+      <div className="chart__bar">
         {spendingAmount.map((item, id) => (
-          <div className="chart__bar">
-            <div key={id} className="chart__overlay">${item}</div>
-            <div
-              key={id}
-              className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
-              style={{ height: `${item}%` }}
-            >
-            </div>
+          <div key={id} className="chart__overlay">${item}</div>
+        ))}
+      </div>
+      
+      <div className="chart__fill">
+        {spendingAmount.map((item, id) => (
+          <div
+            key={id}
+            className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
+            style={{ height: `${item}%` }}
+          >
           </div>
         ))}
-      </div> */}
-    
-        <div className="chart__bar">
-          {spendingAmount.map((item, id) => (
-            <div key={id} className="chart__overlay">${item}</div>
-          ))}
-        </div>
-        
-        <div className="chart__fill">
-          {spendingAmount.map((item, id) => (
-            <div
-              key={id}
-              className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
-              style={{ height: `${item}%` }}
-            >
-            </div>
-          ))}
-        </div>
+      </div>
 
       <div className="chart__week">
         {chartDate.map((item, id) => (
