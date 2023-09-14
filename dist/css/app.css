@@ -51,31 +51,32 @@ body {
 
 .chart {
   max-width: 300px;
-  width: 100%;
   height: 250px;
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 15px;
 }
 
 .chart__fill--other {
-  width: 15%;
+  width: 10%;
   background-color: hsl(10, 79%, 65%);
   border-radius: 3px;
 }
 
 .chart__fill--today {
-  width: 15%;
+  width: 10%;
   background-color: hsl(186, 34%, 60%);
   border-radius: 3px;
 }
 
 .chart__overlay {
   display: none;
-  width: 120%;
-  transform: translate(-10%, -120%);
+  transform: translateY(-120%);
 }
 .chart__overlay .chart__overlay--text {
+  width: 140%;
+  transform: translateX(-15%);
   border-radius: 3px;
   background-color: black;
   color: white;
