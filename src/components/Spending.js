@@ -5,24 +5,10 @@ import ThisMonth from './ThisMonth';
 import LastMonth from './LastMonth';
 
 function Spending() {
-  //const [ spendingAmount, setSpendingAmout ] = useState([]);
   const [ chartDate, setChartDate ] = useState([]);
 
   let thisMonth = 478.33;
   let lastMonth = 467.12;
-  
-  // useEffect(() => {
-  //   fetchSpendingData();
-  // },[]);  
-
-  // get amount and date from data.json
-  // const fetchSpendingData = async () => {
-  //   const response = await fetch("/data.json");
-  //   const data = await response.json();
-
-  //   setSpendingAmout(data.map(({ amount }) => amount));
-  //   setChartDate(data.map(({ day }) => day));
-  // };
 
   return (
     <div className='spending'>

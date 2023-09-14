@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ChartBar from "./ChartBar";
 
 function Chart({ chartDate }) {
   const [ chartAmount, setChartAmount ] = useState([]);
@@ -70,28 +71,9 @@ function Chart({ chartDate }) {
   };
 
   return (
-    <div className="chart">
+    <div>
 
-      <div className="chart__fill" >
-        {chartAmount.map((item, id) => (
-          <div
-            key={id}
-            onMouseOver={handleMouseOver} 
-            onMouseOut={handleMouseOut}
-            className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
-            style={{ height: `${item}%` }}
-          >
-          </div>
-        ))}
-      </div>
-
-      {isHover && (
-        <div className="chart__bar">
-        {spendingAmount.map((item, id) => (
-          <div key={id} className="chart__overlay">${item}</div>
-        ))}
-        </div>
-      )}
+      <ChartBar dayIndex={dayIndex} />
 
       <div className="chart__week">
         {chartDate.map((item, id) => (
