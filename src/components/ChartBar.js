@@ -34,9 +34,12 @@ function ChartBar({ dayIndex }) {
           className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
           style={{ height: `${item}%` }}
         >
-          <div className="chart__overlay">${item}</div>
+          <div className="chart__overlay">
+            <div className="chart__overlay--text">${item}</div>
+          </div>
         </div>
       ))}
+    
     </div>
   );
 };
