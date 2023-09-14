@@ -5,7 +5,6 @@ import ThisMonth from './ThisMonth';
 import LastMonth from './LastMonth';
 
 function Spending() {
-  const [ chartDate, setChartDate ] = useState([]);
 
   let thisMonth = 478.33;
   let lastMonth = 467.12;
@@ -14,7 +13,7 @@ function Spending() {
     <div className='spending'>
       <Layout style={{backgroundColor: "white", color: "hsl(25, 47%, 15%)"}}>
         <h3>Spending - Last 7 days</h3>
-        <Chart chartDate={chartDate} />
+        <Chart />
         <hr />
         <div className="spending--month">
           <ThisMonth thisMonth={thisMonth} />

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import ChartBar from "./ChartBar";
 
-function Chart({ chartDate }) {
+function Chart() {
   const [ chartAmount, setChartAmount ] = useState([]);
   const [ dayIndex, setDayIndex ] = useState(0);
   const [ spendingAmount, setSpendingAmout ] = useState([]);
-  const [ isHover, setIsHover ] = useState(false);
+  const [ chartDate, setChartDate ] = useState([]);
   let day = 'wed';
   
   useEffect(() => {
@@ -23,6 +22,7 @@ function Chart({ chartDate }) {
     const data = await response.json();
 
     setSpendingAmout(data.map(({ amount }) => amount));
+    setChartDate(data.map(({ day }) => day));
   };
 
   // adjust heights so max y value is 70%
@@ -61,19 +61,23 @@ function Chart({ chartDate }) {
     };
   };
   //console.log(dayIndex);
-
-  const handleMouseOver = () => {
-    setIsHover(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHover(false);
-  };
+  //console.log(chartDate);
 
   return (
     <div>
-
-      <ChartBar dayIndex={dayIndex} />
+      <div className="chart">
+        {spendingAmount.map((item, id) => (
+          <div
+            key={id}
+            className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
+            style={{ height: `${item}%` }}
+          >
+            <div className="chart__overlay">
+              <div className="chart__overlay--text">${item}</div>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div className="chart__week">
         {chartDate.map((item, id) => (
@@ -85,5 +89,3 @@ function Chart({ chartDate }) {
 };
 
 export default Chart;
-
-// how to map chart__fill with heights from data in chartData
