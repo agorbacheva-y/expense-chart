@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 function Chart() {
-  const [ chartAmount, setChartAmount ] = useState([]);
   const [ dayIndex, setDayIndex ] = useState(0);
   const [ spendingAmount, setSpendingAmout ] = useState([]);
   const [ chartDate, setChartDate ] = useState([]);
@@ -12,10 +11,6 @@ function Chart() {
     currentDay();
   },[]);  
 
-  useEffect(() => {
-    fetchChartData();
-  },[spendingAmount])
-
   // get amount and date from data.json
   const fetchSpendingData = async () => {
     const response = await fetch("/data.json");
@@ -23,12 +18,6 @@ function Chart() {
 
     setSpendingAmout(data.map(({ amount }) => amount));
     setChartDate(data.map(({ day }) => day));
-  };
-
-  // adjust heights so max y value is 70%
-  const fetchChartData = () => {
-    const newAmount = spendingAmount.map(currentValue => currentValue/0.7);
-    setChartAmount(newAmount);
   };
 
   // set index of current day
@@ -70,7 +59,7 @@ function Chart() {
           <div
             key={id}
             className={dayIndex === id ? 'chart__fill--today' : 'chart__fill--other'}
-            style={{ height: `${item}%` }}
+            style={{ height: `${item/0.7}%` }}
           >
             <div className="chart__overlay">
               <div className="chart__overlay--text">${item}</div>
