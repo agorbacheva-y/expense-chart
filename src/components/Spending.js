@@ -6,6 +6,7 @@ import LastMonth from './LastMonth';
 
 function Spending() {
 
+  // given values
   let thisMonth = 478.33;
   let lastMonth = 467.12;
 

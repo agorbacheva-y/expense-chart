@@ -1,24 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CounterContext } from "../App";
 
 function Chart() {
-  const [ dayIndex, setDayIndex ] = useState(0);
-  const [ spendingAmount, setSpendingAmout ] = useState([]);
-  const [ chartDate, setChartDate ] = useState([]);
+  const { chartDate, spendingAmount } = useContext(CounterContext);
+  const [ dayIndex, setDayIndex ] = useState(null);
+  
   let day = 'wed';
   
   useEffect(() => {
-    fetchSpendingData();
     currentDay();
   },[]);  
-
-  // get amount and date from data.json
-  const fetchSpendingData = async () => {
-    const response = await fetch("/data.json");
-    const data = await response.json();
-
-    setSpendingAmout(data.map(({ amount }) => amount));
-    setChartDate(data.map(({ day }) => day));
-  };
 
   // set index of current day
   const currentDay = () => { 
