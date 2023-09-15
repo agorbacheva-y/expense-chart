@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CounterContext } from "../App";
 
-function LastMonth({ thisMonth, lastMonth }) {
+function LastMonth() {
   const [ percentChange, setPercentChange ] = useState("");
+  const { thisMonth, lastMonth} = useContext(CounterContext);
 
   useEffect(() => {
     findDiff();

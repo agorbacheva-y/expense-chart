@@ -30,6 +30,10 @@ body {
 .balance .balance__nr {
   float: left;
 }
+.balance .balance__nr p {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
 .balance .balance__logo {
   float: right;
 }

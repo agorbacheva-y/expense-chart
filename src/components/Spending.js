@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react";
 import Layout from './Layout';
 import Chart from './Chart';
 import ThisMonth from './ThisMonth';
 import LastMonth from './LastMonth';
 
 function Spending() {
-
-  // given values
-  let thisMonth = 478.33;
-  let lastMonth = 467.12;
-
   return (
     <div className='spending'>
       <Layout style={{backgroundColor: "white", color: "hsl(25, 47%, 15%)"}}>
@@ -17,8 +11,8 @@ function Spending() {
         <Chart />
         <hr />
         <div className="spending--month">
-          <ThisMonth thisMonth={thisMonth} />
-          <LastMonth thisMonth={thisMonth} lastMonth={lastMonth} />
+          <ThisMonth />
+          <LastMonth />
         </div>
       </Layout>
     </div>

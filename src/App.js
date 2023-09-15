@@ -8,6 +8,9 @@ function App() {
   const [ spendingAmount, setSpendingAmout ] = useState([]);
   const [ chartDate, setChartDate ] = useState([]);
   
+  // given values
+  let thisMonth = 478.33;
+  let lastMonth = 467.12;
 
   useEffect(() => {
     fetchSpendingData();
@@ -24,7 +27,7 @@ function App() {
 
   return (
     <div className='body-container'>
-      <CounterContext.Provider value= {{ spendingAmount, chartDate }} >
+      <CounterContext.Provider value= {{ spendingAmount, chartDate, thisMonth, lastMonth }} >
         <Balance />
         <Spending />
       </CounterContext.Provider>
